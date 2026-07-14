@@ -67,7 +67,6 @@ peer-skill-exchange-platform/
 │   └── index.html
 ├── docs/screenshots/
 ├── .gitignore
-├── GITHUB_4_DAY_PLAN.md
 └── README.md
 ```
 
@@ -191,14 +190,7 @@ Offering search supports `keyword`, `skill_id`, `category_id`, `mode`, `level`, 
 6. The reserved credits are transferred to the teacher exactly once.
 7. Every change is stored as a `CreditTransaction`.
 
-## Running tests
-
-```powershell
-cd backend
-pytest -q
-```
-
-## Optional Celery and Redis setup
+## Celery and Redis setup
 
 Start Redis:
 
@@ -219,22 +211,3 @@ celery -A celery_worker.celery beat --loglevel=info
 ```
 
 The scheduled job cancels old pending requests after the configured stale period.
-
-## Screenshots
-
-Add these inside `docs/screenshots`:
-
-- Discover offerings
-- Member dashboard
-- Request and session workflow
-- Credit wallet
-- Admin dashboard
-
-## Submission checklist
-
-- Test teacher, learner and admin workflows.
-- Add screenshots.
-- Use environment secrets before deployment.
-- Keep the repository public for submission.
-- Do not commit the SQLite database, virtual environment or cache files.
-- Follow `GITHUB_4_DAY_PLAN.md` instead of backdating commits.
